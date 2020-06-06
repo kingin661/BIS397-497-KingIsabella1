@@ -6,18 +6,17 @@ Created on Thu Jun  4 22:25:00 2020
 """
 #Assignement 3 - Exercise 5.20 
 
-
 empty_table=[[1,2,3],[4,5,6],[7,8,9]]
 
 
 def display_table(items):
-    for i, row in enumerate(empty_table):
-        for j, item in enumerate(row):
-            print(f'{j}', end = ' ') 
-    print()
-    for row in empty_table: 
-        for item in row: 
-            print (item, end = ' ')
-        print () 
-
+    for i in range(len(empty_table[0])):
+                print(f'\t({i})', end = ' ')
+    print ()
+    for k in range(len(empty_table)):
+        print(f'({k})', end = ' ')
+        for j in range(len(empty_table[0])):
+            print(f'{empty_table[k][j]:<7}', end = ' ')
+        print()
+        
 display_table(empty_table)

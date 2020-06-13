@@ -5,45 +5,86 @@ Created on Wed Jun 10 13:03:51 2020
 @author: Bella
 """
 #Assignment 4 - Exercise 7.20
+print("I'm sorry! This may take a while!\n Table will print at end.")
 import numpy as np 
+import math 
 
-print('One Element List timed...')
-%timeit list(range(1,2))
-print('One Element Array timed...')
-%timeit np.arange(1,2)
-print()
+list1 = [] 
+for i in range(3):
+    a = %timeit -o list(range(1,2))
+    list1.append(a)
 
-print('Ten Element list timed...')
-%timeit list(range(1,11))
-print('Ten Element Array timed...')
-%timeit np.arange(1,11)
-print()
+array1 = [] 
+for i in range(3):
+    b = %timeit -o np.arange(1,2)
+    array1.append(b)
 
-print('100 Element List timed...')
-%timeit list(range(1,101))
-print('100 Element Array timed...')
-%timeit np.arange(1,101)
-print()
+list10 = []
+for i in range(3):
+    a = %timeit -o list(range(1,11))
+    list10.append(a)
 
-print('1,000 Element list timed...')
-%timeit list(range(1,1001))
-print('1,000 Element Array time...')
-%timeit np.arange(1,1001)
-print() 
+array10 = []
+for i in range(3):
+    b = %timeit -o np.arange(1,11)
+    array10.append(b)
 
-print('10,000 Element list timed...')
-%timeit list(range(1,10_001))
-print('10,000 Element Array timed...')
-%timeit np.arange(1,10_001)
-print()
+list100 = [] 
+for i in range(3):
+    a = %timeit -o list(range(1,101))
+    list100.append(a)
 
-print('100,000 Element List timed...')
-%timeit list(range(1,100_001))
-print('100,000 Element Array timed...')
-%timeit np.arange(1,100_001)
-print() 
+array100 = [] 
+for i in range(3):
+    b = %timeit -o np.arange(1,101)
+    array100.append(b)
 
-print('1,000,000 Element list timed...')
-%timeit list(range(1,1_000_001))
-print('1,000,000 Element Array timed...')s
-%timeit np.arange(1,1_000_001)
+list1000 = []
+for i in range(3):
+    a = %timeit -o list(range(1,1_000))
+    list1000.append(a)
+
+array1000 = []
+for i in range(3):
+    a = %timeit -o np.arange(1,1_000)
+    array1000.append(a)
+
+list10000 = []
+for i in range(3):
+    a = %timeit -o list(range(1,10_001))
+    list10000.append(a)
+
+array10000 = []
+for i in range(3):
+    a = %timeit -o np.arange(1,1,10_001)
+    array10000.append(a)
+
+list100000 = [] 
+for i in range(3):
+    a = %timeit -o list(range(1,100_001))
+    list100000.append(a)
+
+array100000 = []
+for i in range(3):
+    a = %timeit -o np.arange(1,100_001)
+    array100000.append(a)
+
+listm = [] 
+for i in range(3):
+    a = %timeit -o list(range(1,1_000_001))
+    listm.append(a)
+
+arraym = [] 
+for i in range(3):
+    a = %timeit -o np.arange(1,1_000_001)
+    arraym.append(a)
+    
+    
+print(f'Number of values\t\t\tList avg execution time\t\t\tArray avg execution time')
+print(f'1\t\t\t\t\t\t\t{list1[0].best}\t\t\t{array1[0].best}')
+print(f'10\t\t\t\t\t\t\t{list10[0].best}\t\t\t{array10[0].best}')
+print(f'100\t\t\t\t\t\t\t{list100[0].best}\t\t\t{array100[0].best}')
+print(f'1000\t\t\t\t\t\t{list1000[0].best}\t\t\t{array1000[0].best}')
+print(f'10000\t\t\t\t\t\t{list10000[0].best}\t\t\t{array10000[0].best}')
+print(f'100000\t\t\t\t\t\t{list100000[0].best}\t\t\t{array100000[0].best}')
+print(f'1000000\t\t\t\t\t\t{listm[0].best}\t\t\t\t{arraym[0].best}'

@@ -4,6 +4,9 @@ Created on Sat Jun  6 16:38:11 2020
 
 @author: Bella
 """
+# Score: 18/25
+# Rerolls don't seemt o do anything
+
 import random as rand 
 
 print("Let's play Yahtzee!")

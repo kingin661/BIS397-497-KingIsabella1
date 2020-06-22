@@ -112,7 +112,7 @@ YT = YT[YT.valid == True]
 
 YT['fare_amount'].describe()
 
-YT['valid'] = YT['fare_amount'] < 0
+YT['valid'] = YT['fare_amount'] > 1000
 
 YT[['fare_amount','valid']].head()
 

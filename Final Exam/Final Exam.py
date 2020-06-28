@@ -27,7 +27,7 @@ YT
 YT.dtypes
 
 YT['date'] = pd.to_datetime(YT['date'],
-                              format = "%Y-%m-%d")
+                              infer_datetime_format=True)
 YT.dtypes
 
 

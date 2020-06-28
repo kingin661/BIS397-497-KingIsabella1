@@ -15,8 +15,12 @@ YT
 YT.columns
 
 
-YT.at[2751,'deaths'] -= 282
-YT.at[2806,'deaths'] -= 297
+for item in YT['date']:
+    if str(YT['date']) == "2020-04-21":
+        YT['deaths'] -= 282
+    if str(YT['date']) == "2020-04-22":
+        YT['deaths'] -= 297
+        
 
 YT['valid'] = YT['state'] == "Pennsylvania"
 

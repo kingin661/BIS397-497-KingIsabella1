@@ -14,6 +14,12 @@ YT
 
 YT.columns
 
+
+YT.at['2020-04-21']
+
+YT.at[2751,'deaths'] -= 282
+YT.at[2806,'deaths'] -= 297
+
 YT['valid'] = YT['state'] == "Pennsylvania"
 
 YT = YT[YT.valid == True]
@@ -22,24 +28,16 @@ YT
 
 YT.dtypes
 
+YT['date'] = pd.to_datetime(YT['date'],
+                              format = "%Y-%m-%d")
+YT.dtypes
 
 
-YT['valid'] = YT['date'] != "2020-04-21"
-YT = YT[YT.valid == True] 
-YT['valid'] = YT['date'] != "2020-04-22"
-YT = YT[YT.valid == True]
-
-adj_Deaths = pd.Series(YT['deaths'])
+adj_Deaths=pd.Series(YT['deaths'])
 
 YT['adj_deaths'] = adj_Deaths
 YT.to_csv("us-states.csv", index = False)
 
-YT
-
-YT['date'] = pd.to_datetime(YT['date'],
-                              infer_datetime_format=True)
-
-YT['date']
 
 locator = mdates.AutoDateLocator(minticks=15,maxticks=30)
 formatter = mdates.ConciseDateFormatter(locator)
@@ -52,5 +50,3 @@ ax.set_ylabel('Cumulative Deaths')
 ax.set_xlabel('Date')
 ax.set_title('Pa. coronavirus deaths')
 plt.show()
-
-

@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-YT = pd.read_csv("us-states.csv")
+YT = pd.read_csv('us-states.csv')
 
 YT
 

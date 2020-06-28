@@ -15,8 +15,6 @@ YT
 YT.columns
 
 
-YT.at['2020-04-21']
-
 YT.at[2751,'deaths'] -= 282
 YT.at[2806,'deaths'] -= 297
 
